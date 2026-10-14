@@ -1,0 +1,114 @@
+[
+  {
+    "prompt": "Inspect ticket 101's customer order, checking requested inventory and linked invoice/vendor records.",
+    "tool_name": "inspect_customer_order",
+    "tool_output": {
+      "result": {
+        "inventory": {
+          "location": "Aisle B",
+          "name": "Classic Bulldog Tee",
+          "qty": 0,
+          "size": "S",
+          "sku": "CC-TEE-WHITE"
+        },
+        "invoice": {
+          "amount": 840.0,
+          "description": "Rush reprint CC-TEE-WHITE S",
+          "due_date": "2026-08-28",
+          "id": 501,
+          "status": "open",
+          "vendor_id": 1
+        },
+        "ticket": {
+          "created_at": "2026-08-31T09:15:00-04:00",
+          "id": 101,
+          "invoice_id": 501,
+          "lease_id": null,
+          "notes": "Needs a tee in size S.",
+          "qty": 1,
+          "requester": "Tauhid Zaman",
+          "size": "S",
+          "sku": "CC-TEE-WHITE",
+          "status": "open",
+          "subject": "Bulldog tee",
+          "type": "customer_order"
+        },
+        "vendor": {
+          "id": 1,
+          "lead_days": 5,
+          "name": "Bulldog Print Co",
+          "specialty": "apparel reprint"
+        }
+      }
+    }
+  },
+  {
+    "prompt": "Inspect ticket 102's rent notice, linked lease, and the shop's operating date.",
+    "tool_name": "inspect_rent_notice",
+    "tool_output": {
+      "result": {
+        "desk": {
+          "date_today": "2026-08-31",
+          "notes": null
+        },
+        "lease": {
+          "id": 1,
+          "landlord": "Elm City Properties",
+          "monthly_rent": 2400.0,
+          "next_due": "2026-09-02",
+          "notes": null,
+          "space_name": "Chapel Street shop"
+        },
+        "ticket": {
+          "created_at": "2026-08-31T11:05:00-04:00",
+          "id": 102,
+          "invoice_id": null,
+          "lease_id": 1,
+          "notes": "Email: shop rent due in 2 days.",
+          "qty": null,
+          "requester": "Elm City Properties",
+          "size": null,
+          "sku": null,
+          "status": "open",
+          "subject": "Rent due",
+          "type": "rent_notice"
+        }
+      }
+    }
+  },
+  {
+    "prompt": "Evaluate ticket 103's bulk hoodie price override using matching inventory and pricing data.",
+    "tool_name": "evaluate_bulk_price_override",
+    "tool_output": {
+      "result": {
+        "inventory": {
+          "location": "Aisle A",
+          "name": "Basic Hoodie Big Yale",
+          "qty": 8,
+          "size": "M",
+          "sku": "CC-HOOD-NAVY"
+        },
+        "pricing": {
+          "list_price": 58.0,
+          "sku": "CC-HOOD-NAVY",
+          "unit_cost": 22.0
+        },
+        "quantity_gap": 12,
+        "ticket": {
+          "created_at": "2026-08-31T16:55:00-04:00",
+          "id": 103,
+          "invoice_id": null,
+          "lease_id": null,
+          "notes": "Student org wants 20 hoodies, size M, asking for a bulk discount.",
+          "qty": 20,
+          "requester": "Yale AI Club",
+          "size": "M",
+          "sku": "CC-HOOD-NAVY",
+          "status": "open",
+          "subject": "Bulk hoodie discount",
+          "type": "price_override"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "run_context": {
+    "database": "data/campus_customs_new.db",
+    "starting_checking_balance": 3400.0,
+    "ending_checking_balance": 3400.0,
+    "shop_date": "2026-08-31",
+    "human_approvals": []
+  },
+  "tickets": [
+    {
+      "id": 101,
+      "final_status": "resolved",
+      "run_id": "1fc0d996-22bd-4d72-b6a5-6d7e20e13e34",
+      "short_outcome": "The requested size-S Bulldog tee had zero stock. Inventory confirmed a five-day vendor lead time, but open invoice 501 for $840 blocked shipping. The board received a draft plan; no customer or vendor was contacted.",
+      "cash_change": 0.0,
+      "payment_or_purchase": "Invoice 501 ($840.00) was not paid because no human approval was recorded.",
+      "agents": {
+        "Boss": "Reconciled three rounds of MCP evidence and assigned replenishment, payment-readiness, and board-draft work.",
+        "Inventory": "Verified zero CC-TEE-WHITE size-S stock, vendor 1 lead time, and the invoice shipping block.",
+        "Accounting": "Checked invoice 501, cash, payment history, and approval requirements; made no payment.",
+        "Facilities": "Did not participate in this ticket.",
+        "Customer Service": "Prepared a board-only response and checked the stock and vendor evidence; sent nothing."
+      },
+      "delegations": [
+        "Boss -> Inventory",
+        "Boss -> Accounting",
+        "Boss -> Customer Service",
+        "Customer Service -> Accounting"
+      ],
+      "tools_used": [
+        "inspect_customer_order",
+        "inspect_vendor_shipping",
+        "inspect_payment_readiness",
+        "list_open_tickets",
+        "inspect_rent_notice"
+      ],
+      "human_approvals": []
+    },
+    {
+      "id": 102,
+      "final_status": "resolved",
+      "run_id": "cb815e95-d4e7-48e3-932d-de914e6b62b6",
+      "short_outcome": "Facilities confirmed $2,400 rent is due September 2, 2026, so it was upcoming rather than overdue on the shop date August 31. Accounting confirmed $3,400 checking and no prior lease payment; the board received a draft recommendation.",
+      "cash_change": 0.0,
+      "payment_or_purchase": "Lease 1 rent ($2,400.00) was not paid because no human approval was recorded.",
+      "agents": {
+        "Boss": "Coordinated the rent review across three rounds and reconciled timing, cash, and approval evidence.",
+        "Inventory": "Did not participate in this ticket.",
+        "Accounting": "Checked lease payment readiness, cash, and payment history; made no payment.",
+        "Facilities": "Read the lease and desk date, classified rent as upcoming, and produced the facilities evidence.",
+        "Customer Service": "Did not participate; communications remained board-only."
+      },
+      "delegations": [
+        "Boss -> Facilities",
+        "Facilities -> Accounting",
+        "Boss -> Accounting"
+      ],
+      "tools_used": [
+        "inspect_rent_notice",
+        "inspect_payment_readiness",
+        "list_open_tickets"
+      ],
+      "human_approvals": []
+    },
+    {
+      "id": 103,
+      "final_status": "resolved",
+      "run_id": "03c9d2a8-66e9-4c25-b682-385cb40dd484",
+      "short_outcome": "The Yale AI Club requested 20 navy size-M hoodies, while MCP found 8 on hand, a 12-unit shortfall. The team confirmed $58 list price, $22 unit cost, and a vendor shipping block, then left availability and discount language as a board draft.",
+      "cash_change": 0.0,
+      "payment_or_purchase": "No purchase or discount was approved, so no cash left checking.",
+      "agents": {
+        "Boss": "Ran the bounded evidence pass and delegated fulfillment evidence plus a customer-facing draft.",
+        "Inventory": "Verified the 8-unit stock level, 12-unit gap, and vendor shipping dependency.",
+        "Accounting": "Did not participate in this ticket; no payment was proposed.",
+        "Facilities": "Did not participate in this ticket.",
+        "Customer Service": "Prepared a board-only draft that avoided promising a discount, availability, or delivery date."
+      },
+      "delegations": [
+        "Boss -> Inventory",
+        "Boss -> Customer Service"
+      ],
+      "tools_used": [
+        "evaluate_bulk_price_override",
+        "inspect_vendor_shipping"
+      ],
+      "human_approvals": []
+    }
+  ]
+}
